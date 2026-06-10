@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LJ7 — A lição de forma divertida e interativa</title>
+  <meta name="description" content="Resumos diários, quiz desafiadores e ranking gamificado, tudo grátis na sua Escola Sabatina. Baixe o LJ7 agora!" />
+  <meta property="og:title" content="LJ7 — Lição Jovem 7" />
+  <meta property="og:description" content="A lição de forma divertida e interativa. Resumos diários, quiz e ranking gamificado — 100% grátis." />
+  <meta property="og:image" content="https://lj7.netlify.app/imgs/mockup.png" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0a1410" />
+  <link rel="icon" type="image/png" href="imgs/logo_verde.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ╔══════════════ NAV ══════════════╗ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" data-scrollto aria-label="LJ7 — início">
+        <img src="imgs/logo_verde.png" alt="Logo LJ7" />
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#recursos" data-scrollto>Recursos</a>
+        <a href="#como-funciona" data-scrollto>Como funciona</a>
+        <a href="#comunidade" data-scrollto>Comunidade</a>
+      </nav>
+      <a href="#download" class="btn btn-nav" data-scrollto>Baixar grátis</a>
+      <button class="nav-burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Menu móvel">
+      <a href="#recursos" data-scrollto>Recursos</a>
+      <a href="#como-funciona" data-scrollto>Como funciona</a>
+      <a href="#comunidade" data-scrollto>Comunidade</a>
+      <a href="#download" class="btn btn-primary" data-scrollto>Baixar grátis</a>
+    </nav>
+  </div>
+
+  <main>
+    <!-- ╔══════════════ HERO ══════════════╗ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="blob blob-a" data-speed="-18"></div>
+        <div class="blob blob-b" data-speed="14"></div>
+        <div class="blob blob-c" data-speed="-8"></div>
+        <div class="hero-grid"></div>
+        <div class="particles" id="particles"></div>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="badge" data-intro="badge"><i class="ph-fill ph-confetti" aria-hidden="true"></i> <strong>Novo</strong> App 2026</span>
+          <h1 class="hero-title" id="heroTitle">
+            <span class="hl">A lição de forma</span>
+            <span class="hl"><em>divertida</em></span>
+            <span class="hl">e <em>interativa</em></span>
+          </h1>
+          <p class="hero-sub" data-intro="fade">
+            Resumos diários, quiz desafiadores e ranking gamificado,
+            tudo <strong>grátis</strong> na sua Escola Sabatina.
+          </p>
+          <div class="store-buttons" data-intro="fade">
+            <a class="store-btn store-primary" href="https://play.google.com/store/apps/details?id=com.licaojovem.app" target="_blank" rel="noopener">
+              <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+              <span><small>Disponível no</small>Google Play</span>
+            </a>
+            <a class="store-btn store-ghost" href="#download" data-scrollto aria-disabled="true">
+              <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.7-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+              <span><small>Em breve na</small>App Store</span>
+              <i class="soon-chip">Em breve</i>
+            </a>
+          </div>
+          <div class="hero-proof" data-intro="fade">
+            <span class="proof-dot" aria-hidden="true"></span>
+            <span><strong>850+</strong> jovens já estudam com o LJ7 — 100% gratuito</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" data-intro="phone">
+          <div class="phone-halo" aria-hidden="true" data-depth="6"></div>
+          <div class="phone-wrap" data-depth="14">
+            <img class="phone" src="imgs/mockup.png" alt="Tela inicial do app LJ7 em um smartphone" fetchpriority="high" />
+          </div>
+          <span class="chip chip-pts" data-depth="34"><i class="ph-fill ph-lightning" aria-hidden="true"></i> +10 pts</span>
+          <span class="chip chip-fire" data-depth="26"><i class="ph-fill ph-fire" aria-hidden="true"></i> 7 dias seguidos</span>
+          <span class="chip chip-rank" data-depth="42"><i class="ph-fill ph-trophy" aria-hidden="true"></i> #1 no ranking</span>
+        </div>
+      </div>
+
+      <a href="#recursos" class="scroll-hint" data-scrollto aria-label="Rolar para recursos">
+        <span class="scroll-wheel" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ╔══════════════ MARQUEE ══════════════╗ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <span>Resumos diários ✦ Quiz interativo ✦ Ranking ✦ Conquistas ✦ 100% grátis ✦&nbsp;</span>
+        <span>Resumos diários ✦ Quiz interativo ✦ Ranking ✦ Conquistas ✦ 100% grátis ✦&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ╔══════════════ RECURSOS ══════════════╗ -->
+    <section class="section" id="recursos">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <span class="eyebrow"><i class="ph-fill ph-sparkle" aria-hidden="true"></i> Recursos</span>
+          <h2>Tudo em <em>um só app</em></h2>
+        </header>
+        <div class="cards" data-reveal-group>
+          <article class="card" data-tilt>
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="card-icon"><img src="imgs/resumo.png" alt="" loading="lazy" /></div>
+            <h3>Resumos diários</h3>
+            <p>Resumos claros da lição de cada dia.</p>
+          </article>
+          <article class="card" data-tilt>
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="card-icon"><img src="imgs/quiz.png" alt="" loading="lazy" /></div>
+            <h3>Quiz interativo</h3>
+            <p>Teste seus conhecimentos e ganhe pontos!</p>
+          </article>
+          <article class="card" data-tilt>
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="card-icon"><img src="imgs/trofeu.png" alt="" loading="lazy" /></div>
+            <h3>Ranking</h3>
+            <p>Compita com outros jovens pelo topo.</p>
+          </article>
+          <article class="card" data-tilt>
+            <div class="card-glow" aria-hidden="true"></div>
+            <div class="card-icon"><img src="imgs/premio.png" alt="" loading="lazy" /></div>
+            <h3>Conquistas</h3>
+            <p>Desbloqueie recompensas semanais.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══════════════ COMO FUNCIONA ══════════════╗ -->
+    <section class="section section-alt" id="como-funciona">
+      <div class="blob blob-d" data-speed="10" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <span class="eyebrow"><i class="ph-fill ph-rocket-launch" aria-hidden="true"></i> Como funciona</span>
+          <h2>Simples e <em>divertido</em></h2>
+        </header>
+
+        <div class="timeline" id="timeline">
+          <div class="tl-line" aria-hidden="true"><i class="tl-progress" id="tlProgress"></i></div>
+
+          <article class="step" data-reveal>
+            <span class="step-num" data-num aria-hidden="true">1</span>
+            <div class="step-card">
+              <span class="step-dot" aria-hidden="true"></span>
+              <h3>Leia o resumo</h3>
+              <p>Todo dia você recebe um resumo completo e fácil de entender da lição da Escola Sabatina.</p>
+            </div>
+          </article>
+
+          <article class="step step-right" data-reveal>
+            <span class="step-num" data-num aria-hidden="true">2</span>
+            <div class="step-card">
+              <span class="step-dot" aria-hidden="true"></span>
+              <h3>Responda o quiz</h3>
+              <p>Teste seus conhecimentos com perguntas dinâmicas. São <strong>30 segundos</strong> por questão!</p>
+            </div>
+          </article>
+
+          <article class="step" data-reveal>
+            <span class="step-num" data-num aria-hidden="true">3</span>
+            <div class="step-card">
+              <span class="step-dot" aria-hidden="true"></span>
+              <h3>Suba no ranking</h3>
+              <p>Ganhe pontos por cada dia e quiz acertado. Escale o ranking e seja o mais dedicado!</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══════════════ COMUNIDADE ══════════════╗ -->
+    <section class="section" id="comunidade">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <span class="eyebrow"><i class="ph-fill ph-handshake" aria-hidden="true"></i> Comunidade</span>
+          <h2>Junte-se a <em>milhares de jovens</em></h2>
+        </header>
+        <div class="stats" data-reveal-group>
+          <div class="stat">
+            <i class="ph-fill ph-book-open-text stat-icon" aria-hidden="true"></i>
+            <span class="stat-num"><b data-count="1200">0</b>+</span>
+            <span class="stat-label">Lições estudadas</span>
+          </div>
+          <div class="stat">
+            <i class="ph-fill ph-download-simple stat-icon" aria-hidden="true"></i>
+            <span class="stat-num"><b data-count="1000">0</b>+</span>
+            <span class="stat-label">Downloads</span>
+          </div>
+          <div class="stat">
+            <i class="ph-fill ph-star stat-icon" aria-hidden="true"></i>
+            <span class="stat-num"><b data-count="850">0</b>+</span>
+            <span class="stat-label">Jovens engajados</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ╔══════════════ CTA ══════════════╗ -->
+    <section class="section cta-section" id="download">
+      <div class="container">
+        <div class="cta" data-reveal>
+          <div class="cta-glow" aria-hidden="true"></div>
+          <div class="cta-copy">
+            <span class="eyebrow"><i class="ph-fill ph-lightning" aria-hidden="true"></i> Comece agora!</span>
+            <h2>Pronto para <em>começar?</em></h2>
+            <p>Baixe o LJ7 agora — é <strong>100% gratuito</strong>.</p>
+            <div class="store-buttons">
+              <a class="store-btn store-primary" href="https://play.google.com/store/apps/details?id=com.licaojovem.app" target="_blank" rel="noopener">
+                <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+                <span><small>Disponível no</small>Google Play</span>
+              </a>
+              <a class="store-btn store-ghost" href="#" aria-disabled="true" onclick="return false">
+                <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.7-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                <span><small>Em breve na</small>App Store</span>
+                <i class="soon-chip">Em breve</i>
+              </a>
+            </div>
+          </div>
+          <img class="cta-cartoon" src="imgs/home_cartoon.png" alt="Personagem do LJ7 pulando de alegria" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ╔══════════════ FOOTER ══════════════╗ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="imgs/logo_verde.png" alt="Logo LJ7" />
+        <p>© 2025 Lição Jovem 7. Feito com <i class="ph-fill ph-heart footer-heart" aria-hidden="true"></i> para jovens adventistas.</p>
+      </div>
+      <nav class="footer-links" aria-label="Links do rodapé">
+        <a href="https://www.instagram.com/licaojovem7" target="_blank" rel="noopener">Instagram</a>
+        <a href="/privacy">Política de Privacidade</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
