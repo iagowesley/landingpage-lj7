@@ -1,268 +1,325 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LJ7 — A lição de forma divertida e interativa</title>
-  <meta name="description" content="Resumos diários, quiz desafiadores e ranking gamificado, tudo grátis na sua Escola Sabatina. Baixe o LJ7 agora!" />
-  <meta property="og:title" content="LJ7 — Lição Jovem 7" />
-  <meta property="og:description" content="A lição de forma divertida e interativa. Resumos diários, quiz e ranking gamificado — 100% grátis." />
-  <meta property="og:image" content="https://lj7.netlify.app/imgs/mockup.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lição Jovem: a lição da Escola Sabatina Jovem, um dia de cada vez</title>
+  <meta name="description" content="App grátis para estudar a Lição da Escola Sabatina Jovem todo dia: lição por semana e por dia, devocional, quiz semanal de 10 perguntas, sequência de dias e ranking do trimestre." />
+  <link rel="canonical" href="https://lj7.netlify.app/" />
+  <meta name="theme-color" content="#F4F7F6" />
+
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0a1410" />
-  <link rel="icon" type="image/png" href="imgs/logo_verde.png" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Lição Jovem" />
+  <meta property="og:url" content="https://lj7.netlify.app/" />
+  <meta property="og:title" content="Lição Jovem: a lição da semana, um dia de cada vez" />
+  <meta property="og:description" content="Estudo diário da Lição Jovem com devocional, quiz toda semana e ranking do trimestre. Grátis no Google Play." />
+  <meta property="og:image" content="https://lj7.netlify.app/imgs/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Logo do Lição Jovem e duas telas do app" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" href="imgs/favicon.png" />
+  <link rel="apple-touch-icon" href="imgs/favicon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="preload" as="image" href="imgs/screens/webp/01-inicio.webp" fetchpriority="high" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
 </head>
 <body>
-  <div class="scroll-progress" aria-hidden="true"></div>
-  <div class="cursor-glow" aria-hidden="true"></div>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- ╔══════════════ NAV ══════════════╗ -->
-  <header class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo" data-scrollto aria-label="LJ7 — início">
-        <img src="imgs/logo_verde.png" alt="Logo LJ7" />
+  <!-- Topo fixo -->
+  <header class="topbar" id="topbar">
+    <div class="wrap topbar__in">
+      <a class="brand" href="#topo" aria-label="Lição Jovem, voltar ao início">
+        <img src="imgs/logo_verde.png" alt="" width="73" height="40" />
       </a>
-      <nav class="nav-links" aria-label="Navegação principal">
-        <a href="#recursos" data-scrollto>Recursos</a>
-        <a href="#como-funciona" data-scrollto>Como funciona</a>
-        <a href="#comunidade" data-scrollto>Comunidade</a>
+      <nav class="topnav" id="topnav" aria-label="Principal">
+        <a href="#funcoes">Funções</a>
+        <a href="#planos">Planos</a>
+        <a href="#duvidas">Dúvidas</a>
       </nav>
-      <a href="#download" class="btn btn-nav" data-scrollto>Baixar grátis</a>
-      <button class="nav-burger" id="navBurger" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span>
+      <a class="btn btn--primary btn--sm topbar__cta" href="#baixar">Baixar app</a>
+      <button class="menu-btn" type="button" aria-controls="topnav" aria-expanded="false">
+        <i class="ph ph-list" aria-hidden="true"></i>
+        <span class="sr-only">Abrir menu</span>
       </button>
     </div>
   </header>
 
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <nav aria-label="Menu móvel">
-      <a href="#recursos" data-scrollto>Recursos</a>
-      <a href="#como-funciona" data-scrollto>Como funciona</a>
-      <a href="#comunidade" data-scrollto>Comunidade</a>
-      <a href="#download" class="btn btn-primary" data-scrollto>Baixar grátis</a>
-    </nav>
-  </div>
-
-  <main>
-    <!-- ╔══════════════ HERO ══════════════╗ -->
-    <section class="hero" id="hero">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="blob blob-a" data-speed="-18"></div>
-        <div class="blob blob-b" data-speed="14"></div>
-        <div class="blob blob-c" data-speed="-8"></div>
-        <div class="hero-grid"></div>
-        <div class="particles" id="particles"></div>
-      </div>
-
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <span class="badge" data-intro="badge"><i class="ph-fill ph-confetti" aria-hidden="true"></i> <strong>Novo</strong> App 2026</span>
-          <h1 class="hero-title" id="heroTitle">
-            <span class="hl">A lição de forma</span>
-            <span class="hl"><em>divertida</em></span>
-            <span class="hl">e <em>interativa</em></span>
-          </h1>
-          <p class="hero-sub" data-intro="fade">
-            Resumos diários, quiz desafiadores e ranking gamificado,
-            tudo <strong>grátis</strong> na sua Escola Sabatina.
-          </p>
-          <div class="store-buttons" data-intro="fade">
-            <a class="store-btn store-primary" href="https://play.google.com/store/apps/details?id=com.licaojovem.app" target="_blank" rel="noopener">
-              <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
-              <span><small>Disponível no</small>Google Play</span>
-            </a>
-            <a class="store-btn store-ghost" href="#download" data-scrollto aria-disabled="true">
-              <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.7-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-              <span><small>Em breve na</small>App Store</span>
-              <i class="soon-chip">Em breve</i>
-            </a>
-          </div>
-          <div class="hero-proof" data-intro="fade">
-            <span class="proof-dot" aria-hidden="true"></span>
-            <span><strong>850+</strong> jovens já estudam com o LJ7 — 100% gratuito</span>
-          </div>
-        </div>
-
-        <div class="hero-visual" data-intro="phone">
-          <div class="phone-halo" aria-hidden="true" data-depth="6"></div>
-          <div class="phone-wrap" data-depth="14">
-            <img class="phone" src="imgs/mockup.png" alt="Tela inicial do app LJ7 em um smartphone" fetchpriority="high" />
-          </div>
-          <span class="chip chip-pts" data-depth="34"><i class="ph-fill ph-lightning" aria-hidden="true"></i> +10 pts</span>
-          <span class="chip chip-fire" data-depth="26"><i class="ph-fill ph-fire" aria-hidden="true"></i> 7 dias seguidos</span>
-          <span class="chip chip-rank" data-depth="42"><i class="ph-fill ph-trophy" aria-hidden="true"></i> #1 no ranking</span>
-        </div>
-      </div>
-
-      <a href="#recursos" class="scroll-hint" data-scrollto aria-label="Rolar para recursos">
-        <span class="scroll-wheel" aria-hidden="true"></span>
-      </a>
-    </section>
-
-    <!-- ╔══════════════ MARQUEE ══════════════╗ -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track" id="marqueeTrack">
-        <span>Resumos diários ✦ Quiz interativo ✦ Ranking ✦ Conquistas ✦ 100% grátis ✦&nbsp;</span>
-        <span>Resumos diários ✦ Quiz interativo ✦ Ranking ✦ Conquistas ✦ 100% grátis ✦&nbsp;</span>
-      </div>
-    </div>
-
-    <!-- ╔══════════════ RECURSOS ══════════════╗ -->
-    <section class="section" id="recursos">
-      <div class="container">
-        <header class="section-head" data-reveal>
-          <span class="eyebrow"><i class="ph-fill ph-sparkle" aria-hidden="true"></i> Recursos</span>
-          <h2>Tudo em <em>um só app</em></h2>
-        </header>
-        <div class="cards" data-reveal-group>
-          <article class="card" data-tilt>
-            <div class="card-glow" aria-hidden="true"></div>
-            <div class="card-icon"><img src="imgs/resumo.png" alt="" loading="lazy" /></div>
-            <h3>Resumos diários</h3>
-            <p>Resumos claros da lição de cada dia.</p>
-          </article>
-          <article class="card" data-tilt>
-            <div class="card-glow" aria-hidden="true"></div>
-            <div class="card-icon"><img src="imgs/quiz.png" alt="" loading="lazy" /></div>
-            <h3>Quiz interativo</h3>
-            <p>Teste seus conhecimentos e ganhe pontos!</p>
-          </article>
-          <article class="card" data-tilt>
-            <div class="card-glow" aria-hidden="true"></div>
-            <div class="card-icon"><img src="imgs/trofeu.png" alt="" loading="lazy" /></div>
-            <h3>Ranking</h3>
-            <p>Compita com outros jovens pelo topo.</p>
-          </article>
-          <article class="card" data-tilt>
-            <div class="card-glow" aria-hidden="true"></div>
-            <div class="card-icon"><img src="imgs/premio.png" alt="" loading="lazy" /></div>
-            <h3>Conquistas</h3>
-            <p>Desbloqueie recompensas semanais.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ╔══════════════ COMO FUNCIONA ══════════════╗ -->
-    <section class="section section-alt" id="como-funciona">
-      <div class="blob blob-d" data-speed="10" aria-hidden="true"></div>
-      <div class="container">
-        <header class="section-head" data-reveal>
-          <span class="eyebrow"><i class="ph-fill ph-rocket-launch" aria-hidden="true"></i> Como funciona</span>
-          <h2>Simples e <em>divertido</em></h2>
-        </header>
-
-        <div class="timeline" id="timeline">
-          <div class="tl-line" aria-hidden="true"><i class="tl-progress" id="tlProgress"></i></div>
-
-          <article class="step" data-reveal>
-            <span class="step-num" data-num aria-hidden="true">1</span>
-            <div class="step-card">
-              <span class="step-dot" aria-hidden="true"></span>
-              <h3>Leia o resumo</h3>
-              <p>Todo dia você recebe um resumo completo e fácil de entender da lição da Escola Sabatina.</p>
-            </div>
-          </article>
-
-          <article class="step step-right" data-reveal>
-            <span class="step-num" data-num aria-hidden="true">2</span>
-            <div class="step-card">
-              <span class="step-dot" aria-hidden="true"></span>
-              <h3>Responda o quiz</h3>
-              <p>Teste seus conhecimentos com perguntas dinâmicas. São <strong>30 segundos</strong> por questão!</p>
-            </div>
-          </article>
-
-          <article class="step" data-reveal>
-            <span class="step-num" data-num aria-hidden="true">3</span>
-            <div class="step-card">
-              <span class="step-dot" aria-hidden="true"></span>
-              <h3>Suba no ranking</h3>
-              <p>Ganhe pontos por cada dia e quiz acertado. Escale o ranking e seja o mais dedicado!</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ╔══════════════ COMUNIDADE ══════════════╗ -->
-    <section class="section" id="comunidade">
-      <div class="container">
-        <header class="section-head" data-reveal>
-          <span class="eyebrow"><i class="ph-fill ph-handshake" aria-hidden="true"></i> Comunidade</span>
-          <h2>Junte-se a <em>milhares de jovens</em></h2>
-        </header>
-        <div class="stats" data-reveal-group>
-          <div class="stat">
-            <i class="ph-fill ph-book-open-text stat-icon" aria-hidden="true"></i>
-            <span class="stat-num"><b data-count="1200">0</b>+</span>
-            <span class="stat-label">Lições estudadas</span>
-          </div>
-          <div class="stat">
-            <i class="ph-fill ph-download-simple stat-icon" aria-hidden="true"></i>
-            <span class="stat-num"><b data-count="1000">0</b>+</span>
-            <span class="stat-label">Downloads</span>
-          </div>
-          <div class="stat">
-            <i class="ph-fill ph-star stat-icon" aria-hidden="true"></i>
-            <span class="stat-num"><b data-count="850">0</b>+</span>
-            <span class="stat-label">Jovens engajados</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ╔══════════════ CTA ══════════════╗ -->
-    <section class="section cta-section" id="download">
-      <div class="container">
-        <div class="cta" data-reveal>
-          <div class="cta-glow" aria-hidden="true"></div>
-          <div class="cta-copy">
-            <span class="eyebrow"><i class="ph-fill ph-lightning" aria-hidden="true"></i> Comece agora!</span>
-            <h2>Pronto para <em>começar?</em></h2>
-            <p>Baixe o LJ7 agora — é <strong>100% gratuito</strong>.</p>
-            <div class="store-buttons">
-              <a class="store-btn store-primary" href="https://play.google.com/store/apps/details?id=com.licaojovem.app" target="_blank" rel="noopener">
-                <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+  <main id="conteudo">
+    <!-- Hero + celular girando (o mesmo celular do hero continua a animação) -->
+    <section class="tour" id="topo" aria-label="Apresentação do app">
+      <div class="tour__in wrap">
+        <div class="tour__copy">
+          <div class="hero" data-hero>
+            <h1 class="hero__title">A lição da semana, um dia de cada vez.</h1>
+            <p class="hero__sub">Estudo diário da Lição da Escola Sabatina Jovem, com devocional, quiz toda semana e uma sequência de dias que você não vai querer quebrar.</p>
+            <div class="stores">
+              <a class="store" href="https://play.google.com/store/apps/details?id=com.licaojovem.app" target="_blank" rel="noopener">
+                <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
                 <span><small>Disponível no</small>Google Play</span>
               </a>
-              <a class="store-btn store-ghost" href="#" aria-disabled="true" onclick="return false">
+              <span class="store store--soon" aria-label="App Store, em breve">
                 <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.7-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
                 <span><small>Em breve na</small>App Store</span>
-                <i class="soon-chip">Em breve</i>
-              </a>
+              </span>
+            </div>
+            <p class="hero__hint" aria-hidden="true"><i class="ph ph-arrow-down"></i> Role para ver o app por dentro</p>
+          </div>
+
+          <div class="steps" id="funcoes">
+            <h2 class="sr-only">Funções do app, tela por tela</h2>
+            <div class="meter" aria-hidden="true">
+              <span class="meter__num">01</span>
+              <span class="meter__bar"><i></i></span>
+              <span class="meter__total">10</span>
+            </div>
+            <!-- Os passos são gerados pelo js/main.js a partir do array STEPS -->
+            <ol class="steps__list"></ol>
+          </div>
+        </div>
+
+        <div class="stage">
+          <div class="floor" aria-hidden="true"></div>
+          <div class="scene">
+            <div class="phone">
+              <div class="phone__edges" aria-hidden="true"></div>
+              <div class="phone__back" aria-hidden="true"><img src="imgs/logo_branca.png" alt="" width="73" height="40" /></div>
+              <div class="phone__face">
+                <div class="phone__screen">
+                  <noscript><img class="scr is-on" src="imgs/screens/webp/01-inicio.webp" alt="Tela inicial do app Lição Jovem" width="600" height="1301" /></noscript>
+                  <span class="phone__island" aria-hidden="true"></span>
+                  <span class="phone__glare" aria-hidden="true"></span>
+                </div>
+              </div>
             </div>
           </div>
-          <img class="cta-cartoon" src="imgs/home_cartoon.png" alt="Personagem do LJ7 pulando de alegria" loading="lazy" />
+          <div class="floaters" aria-hidden="true"><div class="floaters__origin"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gamificação -->
+    <section class="game" id="ranking" aria-labelledby="game-title">
+      <div class="wrap">
+        <header class="game__head">
+          <h2 id="game-title" data-split>Tem placar, mas o centro continua sendo a Bíblia.</h2>
+          <p data-reveal>Sequência, quiz e ranking existem para você voltar amanhã. O conteúdo é o mesmo da lição que a sua igreja estuda no sábado.</p>
+        </header>
+
+        <div class="game__grid">
+          <article class="g-streak">
+            <div class="g-streak__top">
+              <span class="g-flame" data-lottie="fire"><i class="ph ph-fire" aria-hidden="true"></i></span>
+              <b class="g-streak__num">12</b>
+            </div>
+            <h3>dias seguidos</h3>
+            <div class="g-streak__body">
+            <p>Cada dia de estudo vale 1 ponto de perseverança e mantém o fogo aceso no seu perfil.</p>
+            <ol class="g-days" aria-label="Últimos 14 dias: 12 estudados">
+              <li class="on"></li><li class="on"></li><li class="on"></li><li class="on"></li><li class="on"></li><li class="on"></li><li class="on"></li>
+              <li class="on"></li><li class="on"></li><li class="on"></li><li class="on"></li><li class="on today"></li><li></li><li></li>
+            </ol>
+            </div>
+          </article>
+
+          <article class="g-quiz">
+            <div class="g-ring" aria-hidden="true">
+              <svg viewBox="0 0 120 120">
+                <circle class="g-ring__track" cx="60" cy="60" r="52" />
+                <circle class="g-ring__bar" cx="60" cy="60" r="52" />
+              </svg>
+              <span class="g-ring__secs"><span><b>30</b>s</span></span>
+            </div>
+            <h3>Quiz da semana</h3>
+            <dl class="g-facts">
+              <div><dt>10</dt><dd>perguntas sobre a lição da semana</dd></div>
+              <div><dt>30s</dt><dd>para responder cada uma</dd></div>
+              <div><dt>1</dt><dd>revisão no final, com as respostas certas</dd></div>
+            </dl>
+          </article>
+
+          <article class="g-podium">
+            <div class="g-podium__text">
+              <h3>Prêmio para quem chega no topo</h3>
+              <p>O ranking fecha no fim de cada trimestre e os primeiros colocados ganham brindes. Você acompanha sua posição em três placares: perseverança, quiz e geral.</p>
+              <p class="g-podium__note">Ranking e prêmios fazem parte do <a href="#planos">plano Pro</a>.</p>
+            </div>
+            <div class="podium" aria-hidden="true">
+              <img class="podium__trophy" src="imgs/trofeu.webp" alt="" width="560" height="560" loading="lazy" />
+              <div class="podium__col podium__col--2"><span>2º</span></div>
+              <div class="podium__col podium__col--1"><span>1º</span></div>
+              <div class="podium__col podium__col--3"><span>3º</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      DEPOIMENTOS (opcional): quando tiver depoimentos reais, cole este bloco aqui.
+      <section class="quotes" aria-label="O que a galera diz">
+        <div class="wrap">
+          <figure class="quote">
+            <blockquote>TEXTO REAL DO DEPOIMENTO</blockquote>
+            <figcaption>NOME, IDADE, CIDADE</figcaption>
+          </figure>
+        </div>
+      </section>
+    -->
+
+    <!-- Planos -->
+    <section class="plans" id="planos" aria-labelledby="plans-title">
+      <div class="wrap plans__grid">
+        <div class="plans__intro">
+          <h2 id="plans-title" data-split>Grátis para estudar. Pro para disputar.</h2>
+          <p data-reveal>Tudo o que você precisa para estudar a lição é grátis. O Pro é para quem quer entrar no ranking do trimestre e concorrer aos prêmios.</p>
+        </div>
+
+        <article class="plan plan--free">
+          <h3>Gratuito</h3>
+          <p class="plan__price"><b>R$ 0</b></p>
+          <ul class="plan__list">
+            <li><i class="ph ph-check" aria-hidden="true"></i>Lição por semana e por dia, com versículos, resumo e texto completo</li>
+            <li><i class="ph ph-check" aria-hidden="true"></i>Devocional diário e texto-chave do sábado</li>
+            <li><i class="ph ph-check" aria-hidden="true"></i>Quiz semanal com revisão</li>
+            <li><i class="ph ph-check" aria-hidden="true"></i>Comunidade</li>
+          </ul>
+          <a class="btn btn--ghost" href="https://play.google.com/store/apps/details?id=com.licaojovem.app" target="_blank" rel="noopener">Baixar grátis</a>
+        </article>
+
+        <article class="plan plan--pro">
+          <h3>Pro</h3>
+          <p class="plan__price"><b>R$ 9,90</b><span>/mês</span></p>
+          <p class="plan__lead">Tudo do Gratuito, e mais:</p>
+          <ul class="plan__list">
+            <li><i class="ph ph-check" aria-hidden="true"></i>Ranking trimestral de perseverança</li>
+            <li><i class="ph ph-check" aria-hidden="true"></i>Ranking do quiz e ranking geral</li>
+            <li><i class="ph ph-check" aria-hidden="true"></i>Concorre aos prêmios do fim do trimestre</li>
+          </ul>
+          <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.licaojovem.app" target="_blank" rel="noopener">Assinar pelo app</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Dúvidas -->
+    <section class="faq" id="duvidas" aria-labelledby="faq-title">
+      <div class="wrap faq__grid">
+        <div class="faq__intro">
+          <h2 id="faq-title" data-split>Dúvidas</h2>
+          <p data-reveal>Não achou o que queria saber? Manda mensagem no Instagram <a href="https://www.instagram.com/licaojovem7" target="_blank" rel="noopener">@licaojovem7</a>.</p>
+        </div>
+
+        <div class="faq__list">
+          <details>
+            <summary>O app é grátis?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <div class="faq__a"><p>É. Estudo diário, devocional, quiz e comunidade não custam nada. O plano Pro é opcional e libera o ranking do trimestre e a disputa pelos prêmios.</p></div>
+          </details>
+          <details>
+            <!-- CONFIRMAR: ajuste esta resposta conforme o app realmente funciona sem internet -->
+            <summary>Funciona sem internet?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <div class="faq__a"><p>Para carregar a lição, fazer o quiz e ver o ranking e a comunidade, você precisa estar conectado.</p></div>
+          </details>
+          <details>
+            <summary>Qual lição o app usa?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <div class="faq__a"><p>A Lição da Escola Sabatina Jovem do trimestre, a mesma estudada nas igrejas. Se quiser a revista impressa, o app tem um atalho para a loja da CPB.</p></div>
+          </details>
+          <details>
+            <summary>Como funcionam os prêmios?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <div class="faq__a"><p>Você ganha 1 ponto por dia de estudo e pontos extras por acerto no quiz. No fim do trimestre, os primeiros colocados do ranking ganham brindes. Para entrar no ranking, é preciso ter o plano Pro.</p></div>
+          </details>
+          <details>
+            <summary>Tem para iPhone?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <div class="faq__a"><p>Ainda não. Por enquanto o app está no Google Play, e a versão para iPhone está a caminho.</p></div>
+          </details>
+          <details>
+            <summary>Dá para escolher o horário do lembrete?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <div class="faq__a"><p>Dá. No perfil, em Lembrete de estudo, você escolhe a hora e o app avisa todo dia nesse horário.</p></div>
+          </details>
+          <details>
+            <summary>Como ajudo o app a continuar no ar?<i class="ph ph-plus" aria-hidden="true"></i></summary>
+            <div class="faq__a"><p>Com uma doação via PIX, pelo app (Perfil, depois Doe) ou pela chave que está no rodapé desta página. Avaliar o app no Google Play também ajuda muito.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="cta" id="baixar" aria-labelledby="cta-title">
+      <div class="wrap">
+        <div class="cta__box">
+          <div class="cta__copy">
+            <h2 id="cta-title" data-split>Começa pela lição de hoje.</h2>
+            <p>Grátis no Google Play. A versão para iPhone está a caminho.</p>
+            <div class="stores stores--dark">
+              <a class="store" href="https://play.google.com/store/apps/details?id=com.licaojovem.app" target="_blank" rel="noopener">
+                <svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M325.3 234.3 104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z"/></svg>
+                <span><small>Disponível no</small>Google Play</span>
+              </a>
+              <span class="store store--soon" aria-label="App Store, em breve">
+                <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.7-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+                <span><small>Em breve na</small>App Store</span>
+              </span>
+            </div>
+          </div>
+          <img class="cta__art" src="imgs/home_cartoon.webp" alt="Personagem do Lição Jovem pulando de alegria" width="640" height="640" loading="lazy" />
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ╔══════════════ FOOTER ══════════════╗ -->
+  <!-- Rodapé -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="imgs/logo_verde.png" alt="Logo LJ7" />
-        <p>© 2025 Lição Jovem 7. Feito com <i class="ph-fill ph-heart footer-heart" aria-hidden="true"></i> para jovens adventistas.</p>
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <img src="imgs/logo_branca.png" alt="Lição Jovem" width="88" height="48" loading="lazy" />
+        <p>Estudo diário da Lição da Escola Sabatina Jovem.</p>
       </div>
-      <nav class="footer-links" aria-label="Links do rodapé">
-        <a href="https://www.instagram.com/licaojovem7" target="_blank" rel="noopener">Instagram</a>
-        <a href="/privacy">Política de Privacidade</a>
+
+      <nav class="footer__col" aria-label="Site">
+        <h2>Site</h2>
+        <a href="#funcoes">Funções</a>
+        <a href="#planos">Planos</a>
+        <a href="#duvidas">Dúvidas</a>
       </nav>
+
+      <nav class="footer__col" aria-label="Legal e contato">
+        <h2>Legal</h2>
+        <a href="privacy/">Privacidade</a>
+        <a href="termos/">Termos</a>
+        <a href="mailto:contato@licaojovem7.com">Contato</a>
+      </nav>
+
+      <div class="footer__col footer__pix">
+        <h2>Doação PIX</h2>
+        <p>Ajude a manter o app no ar.</p>
+        <button class="pix" type="button" data-pix="88981879814">
+          <span class="pix__key">88981879814</span>
+          <span class="pix__action"><i class="ph ph-copy" aria-hidden="true"></i><span class="pix__label">Copiar</span></span>
+        </button>
+      </div>
+
+      <div class="footer__col footer__social">
+        <h2>Redes</h2>
+        <a href="https://www.instagram.com/licaojovem7" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i>@licaojovem7</a>
+      </div>
+    </div>
+    <div class="wrap footer__base">
+      <p>© 2026 Lição Jovem</p>
+      <a href="#topo">Voltar ao topo</a>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
